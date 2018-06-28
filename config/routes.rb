@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get '/home', to: 'blogs#home'
+  root to: 'blogs#home' 
+  
   resources :blogs do
     collection do
       post :confirm
     end
   end
-  get '/home', to: 'blogs#home'
-  root to: 'blogs#home'
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users
 end
+
