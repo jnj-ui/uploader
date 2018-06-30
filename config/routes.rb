@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'blogs#home' 
+  
   get 'sessions/new'
 
   get '/home', to: 'blogs#home'
