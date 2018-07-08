@@ -44,6 +44,10 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 
+gem 'pry-rails'
+gem 'better_errors'
+gem 'binding_of_caller'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -57,3 +61,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails' 
+

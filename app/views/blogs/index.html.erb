@@ -9,9 +9,14 @@
     <h2><%= blog.title %></h2>
     <p><%= blog.content %></p>
     <div class="blog-links">
+      <% user = User.find_by(id: blog.user_id) %>
+      <p>投稿者：<%= user.name %></p>
       <%= link_to '詳細', blog, class: 'btn btn-success' %>
+      
+      <% if logged_in? && blog.user_id == current_user.id %>
       <%= link_to '編集', edit_blog_path(blog), class: 'btn btn-info' %>
       <%= link_to '削除', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      <% end %>
     </div>
   </div>
 <% end %>
