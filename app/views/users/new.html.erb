@@ -12,7 +12,8 @@
 <% end %>
 
 <%= form_with(model: @user, local: true) do |f| %>  
-  <%= f.label :name %>
+
+  <%= f.label "名前" %>
   <%= f.text_field :name %>
 
   <%= f.label :email %>
@@ -21,8 +22,14 @@
   <%= f.label :password %>
   <%= f.password_field :password %>
 
-  <%= f.label :password_confirmation %>
+  <%= f.label "パスワード《確認用》" %>
   <%= f.password_field :password_confirmation %>
+  
+<div class="icon">
+  <%= f.label "アイコン画像" %>
+  <%= f.file_field :image, id: :user_image %>
+</div>
 
-  <%= f.submit "アカウントを作成する" %>
+<br>
+  <%= f.submit "アカウントを作成する", class: "btn btn-primary btn-normal" %>
 <% end %>
